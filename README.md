@@ -1,4 +1,4 @@
-SwiftIntroPlayground
+Swift Intro Playground
 ====================
 
-Playgrounds for swift intro
+Some Playgrounds as an introduction to Swift
