@@ -2,21 +2,23 @@
 
 import UIKit
 
-let a = 10
-let color = UIColor.redColor()
+/*** Classes ***/
 
-// Fattoriale
-var x = 1
-let x1 = 180.0
-let range : HalfOpenInterval = 1.0...9.5
-
-for i in 0 ... 100 {
-    let y = cos(Float(i) * Float(M_PI) / 180.0)
-}
+/*
+    - differenze con enum
+        - ereditarietà
+        - observer didSet willSet (c'era anche per le struct)
+        - reference type (no value)
+        - deinit
+*/
 
 class View : UIView {
     
-    let customBackgroundColor : UIColor
+    var customBackgroundColor : UIColor {
+        didSet {
+            self.backgroundColor = customBackgroundColor
+        }
+    }
     
     override init(frame: CGRect) {
         
@@ -37,6 +39,33 @@ class View : UIView {
         UIColor.orangeColor().set()
         bezier.fill()
     }
+    
+    deinit {
+        // ...
+    }
 }
 
 let v = View(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+
+/*
+    - reference type
+*/
+
+var v2 = v
+v2.customBackgroundColor = UIColor.blueColor()
+v
+
+/*
+    - typecast dinamico al runtime
+*/
+
+let vUIView = v as UIView
+
+
+
+
+
+
+
+
+
