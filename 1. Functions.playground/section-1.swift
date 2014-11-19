@@ -19,7 +19,7 @@ func degreesCos(gradi degrees : Double = 180) -> Double {
     return c
 }
 for i in 0...90 {
-    let c = degreesCos(gradi: Double(i))
+    let c = degreesCos(gradi: Double(i)) // vedi assistant
 }
 degreesCos()    // parametro opzionale
 
