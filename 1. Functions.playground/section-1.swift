@@ -13,12 +13,13 @@ import UIKit
 
 func degreesCos(gradi degrees : Double = 180) -> Double {
     
-    let d = degrees * M_PI / 180.0
+    let π = M_PI
+    let d = degrees * π / 180
     let c = cos(d)
 
     return c
 }
-for i in 0...90 {
+for i in 0..<180 {
     let c = degreesCos(gradi: Double(i)) // vedi assistant
 }
 degreesCos()    // parametro opzionale
@@ -72,7 +73,7 @@ getValue("name=valerio")
     - "function" types
 */
 
-var f : ((String)->(String))? = nil
+var f : ((String)->String)? = nil
 f = getValue
 f!("a=11")
 
