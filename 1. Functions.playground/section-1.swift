@@ -7,7 +7,18 @@ import UIKit
     - sintassi "func"
     - parametri
     - valore di ritorno
+*/
+
+func addNumbers(x : Int, y : Int) -> Int {
+    return x + y
+}
+
+addNumbers(1, 2)
+addNumbers(4, 5)
+
+/*
     - nomi interni ed esterni (#)
+    - visualizzazione sull'assistant
     - Parametri opzionali
 */
 
@@ -26,13 +37,18 @@ degreesCos()    // parametro opzionale
 
 /*
     - numero variabile di parametri
+    - nested funcs
 */
 
 func degreesCosVariadic(degrees: Double ...) -> [Double] {
     
+    func degreesToRad(d : Double) -> Double {
+        return d * M_PI / 180
+    }
+    
     var results = [Double]()
     for d in degrees {
-        results.append(cos(d * M_PI / 180.0))
+        results.append(cos(/* o d * M_PI / 180.0 */ degreesToRad(d)))
     }
     
     return results
@@ -53,29 +69,12 @@ printLower(&myString)
 myString
 
 /*
-    - nested functions
-*/
-
-func getValue(inStr : String) -> String {
-    
-    func parse(inStr : String) -> [String] {
-        
-        return (inStr as NSString).componentsSeparatedByString("=") as [String]
-    }
-    
-    let parsedStr = parse(inStr)
-    
-    return parsedStr[1]  // boundary check needed
-}
-getValue("name=valerio")
-
-/*
     - "function" types
 */
 
-var f : ((String)->String)? = nil
-f = getValue
-f!("a=11")
+var f : ((Double)->Double)? = nil
+f = degreesCos
+f!(180)
 
 
 
