@@ -96,6 +96,14 @@ class FootballTeam : Team {
             super.addPlayer(player, altezza: altezza)
         }
     }
+
+    
+/*
+    - deinit
+*/
+    deinit {
+        // ...
+    }
 }
 
 
