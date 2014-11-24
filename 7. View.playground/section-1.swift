@@ -1,15 +1,11 @@
-// Playground - noun: a place where people can play
-
 import UIKit
 
-/*** Classes ***/
-
 /*
-    - differenze con enum
-        - ereditarietà
-        - observer didSet willSet (c'era anche per le struct)
-        - reference type (no value)
-        - deinit
+- differenze con struct
+- ereditarietà
+- observer didSet willSet (c'era anche per le struct)
+- reference type (no value)
+- deinit
 */
 
 class View : UIView {
@@ -48,7 +44,7 @@ class View : UIView {
 let v = View(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
 
 /*
-    - reference type
+- reference type
 */
 
 var v2 = v
@@ -56,16 +52,7 @@ v2.customBackgroundColor = UIColor.blueColor()
 v
 
 /*
-    - typecast dinamico al runtime
+- typecast dinamico al runtime
 */
 
 let vUIView = v as UIView
-
-
-
-
-
-
-
-
-
