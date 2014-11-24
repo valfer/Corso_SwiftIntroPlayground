@@ -17,38 +17,34 @@ addNumbers(1, 2)
 addNumbers(4, 5)
 
 /*
-    - nomi interni ed esterni (#)
-    - visualizzazione sull'assistant
-    - Parametri opzionali
+    - func(coseno) visualizzazione sull'assistant
+    - nome esterno ugule all'interno (#gradi)
+    - nomi interni ed esterni diversi (gradi g)
+    - Parametri opzionali (default)
 */
 
-func degreesCos(gradi degrees : Double = 180) -> Double {
+func calcCoseno(gradi g : Double = 180) -> Double {
     
     let π = M_PI
-    let d = degrees * π / 180
+    let d = g * π / 180
     let c = cos(d)
 
     return c
 }
 for i in 0..<180 {
-    let c = degreesCos(gradi: Double(i)) // vedi assistant
+    let c = calcCoseno(gradi: Double(i)) // vedi assistant
 }
-degreesCos()    // parametro opzionale
+calcCoseno()    // parametro opzionale
 
 /*
     - numero variabile di parametri
-    - nested funcs
 */
 
 func degreesCosVariadic(degrees: Double ...) -> [Double] {
     
-    func degreesToRad(d : Double) -> Double {
-        return d * M_PI / 180
-    }
-    
     var results = [Double]()
     for d in degrees {
-        results.append(cos(/* o d * M_PI / 180.0 */ degreesToRad(d)))
+        results.append(calcCoseno(gradi: d))
     }
     
     return results
@@ -57,10 +53,15 @@ degreesCosVariadic(0.0, 90.0, 180.0, 360.0)
 
 /*
     - parametri var e inout
+    - nested funcs
 */
 
 func printLower(/*o var*/inout str : String) {
 
+    /*func lower(inStr : String) -> String {
+        return inStr.lowercaseString
+    }*/
+    
     str = str.lowercaseString
     println(str)
 }
@@ -73,7 +74,7 @@ myString
 */
 
 var f : ((Double)->Double)? = nil
-f = degreesCos
+f = calcCoseno
 f!(180)
 
 
