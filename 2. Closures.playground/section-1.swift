@@ -42,9 +42,6 @@ myArray.sort({
     $0 < $1
 })
 
-// str definisce custom operator <
-myArray.sort(<)
-
 // se è l'ultimo parametro può andare fuori dalle parentesi
 myArray.sort() {
     $0 < $1
@@ -56,6 +53,23 @@ myArray.sort {
 }
 
 myArray
+
+// esiste custom operator < per Int
+myArray.sort(<)
+
+/*
+    - vedono lo scope esterno
+*/
+var aVar = 10
+myArray.sort({(a, b) in
+    if aVar == 20 {
+        aVar = 0
+        // anche modifica
+        return a < b
+    } else {
+        return a > b
+    }
+})
 
 /*
     - il sistema fa una copia delle variabili nella closure se non le modifichiamo, altrimenti cattura una reference
