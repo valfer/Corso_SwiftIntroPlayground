@@ -22,11 +22,11 @@ extension String {
         }
     }
     
-    func toArrayOfInt() -> [Int] {
+    func underscoreString() -> [String] {
         
         let arr = Array(self)
-        let newArr = arr.map {(c: Character) -> Int in
-            return c.hashValue as Int
+        let newArr = arr.map {(c: Character) -> String in
+            return "_" + c
         }
         
         return newArr
@@ -34,7 +34,7 @@ extension String {
 }
 
 let a = "Calcolatore🐧🐨🐪"
-a.toArrayOfInt()
+a.underscoreString()
 a.length
 
 
