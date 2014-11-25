@@ -1,14 +1,23 @@
 import UIKit
 
 /*
-- differenze con struct
-- ereditarietà
-- observer didSet willSet (c'era anche per le struct)
+- visualizzazione assistant
+- proprietà calcolate get/set
+- observer didSet willSet
+- required = obbligatorio override
 - reference type (no value)
-- deinit
 */
 
 class View : UIView {
+    
+    var area : Double {
+        get {
+            return Double(bounds.size.width) * Double(bounds.size.height)
+        }
+        set {
+            // ...
+        }
+    }
     
     var customBackgroundColor : UIColor {
         didSet {
@@ -35,10 +44,6 @@ class View : UIView {
         UIColor.orangeColor().set()
         bezier.fill()
     }
-    
-    deinit {
-        // ...
-    }
 }
 
 let v = View(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
@@ -50,9 +55,3 @@ let v = View(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
 var v2 = v
 v2.customBackgroundColor = UIColor.blueColor()
 v
-
-/*
-- typecast dinamico al runtime
-*/
-
-let vUIView = v as UIView

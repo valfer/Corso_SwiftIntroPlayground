@@ -6,10 +6,11 @@ import UIKit
 
 /*
     - OOP metodi e proprietà
-    - sintassi swifti di proprietà e metodi
+    - sintassi swift per proprietà e metodi
     - self
     - nomi esterni ai metodi (primo parametro escluso)
     - custom init
+    - deinit
 */
 class Team {
     
@@ -40,13 +41,17 @@ class Team {
     - custom init
     - nome esterno anche al primo
     - in init devo inizializzare tutte le proprietà che non sono optionals
-    - a questo punto devo dichiarare anche init() se voglio che funzioni anche ShoppingList()
+    - a questo punto devo dichiarare anche init() se voglio chiamare anche con Team()
 */
     init(players:[String]) {
         self.players = players
     }
     init() {
         self.players = []
+    }
+    
+    deinit {
+        // ... close a db conn.?
     }
 }
 
@@ -67,7 +72,7 @@ let team2 = Team(players:["Mario", "Paolo"])
 team2
 
 /*
-    - subclass (sintassi :)
+    - subclass (sintassi ":")
     - nuove proprietà
     - init
     - override di metodo
@@ -96,10 +101,13 @@ class FootballTeam : Team {
             super.addPlayer(player, altezza: altezza)
         }
     }
+
+    
+/*
+    - deinit
+*/
+    deinit {
+        // ...
+    }
 }
-
-
-
-
-
 
