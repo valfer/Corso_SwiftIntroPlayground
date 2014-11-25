@@ -102,3 +102,8 @@ class FootballTeam : Team {
         }
     }
 }
+
+/*
+    - metodi di classe (prefix class)
+    - proprietà di classe (not yet available :-(
+*/

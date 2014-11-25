@@ -74,9 +74,8 @@ enum Ruolo2 {
     init() {
         self = .Portiere
     }
-
-
 }
+
 let ruolo2 = Ruolo2.Num(4)
 ruolo2.descr()
 let ruolo3 = Ruolo2()
