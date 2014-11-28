@@ -5,6 +5,16 @@ import UIKit
 /*** Extension (per class, struct e enum) ***/
 
 /*
+    // SE NON AVESSIMO LE ENUM...
+    let Cuori = 0, Quadri = 1, Fiori = 1, Picche = 3
+    class Card {
+        var seme : Int = Quadri
+    }
+    ...
+    myCard.seme = 56
+*/
+
+/*
     - sintassi e type inference
 */
 
