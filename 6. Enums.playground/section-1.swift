@@ -4,15 +4,13 @@ import UIKit
 
 /*** Extension (per class, struct e enum) ***/
 
-/*
-    // SE NON AVESSIMO LE ENUM...
-    let Cuori = 0, Quadri = 1, Fiori = 1, Picche = 3
-    class Card {
-        var seme : Int = Quadri
-    }
-    ...
-    myCard.seme = 56
-*/
+// SE NON AVESSIMO LE ENUM...
+let Cuori = 0, Quadri = 1, Fiori = 1, Picche = 3
+class Card {
+    var seme : Int = Quadri
+}
+let myCard = Card()
+myCard.seme = 56    // vorremmo bloccare questo
 
 /*
     - sintassi e type inference
@@ -25,15 +23,17 @@ enum Seme {
     case Picche
 }
 
-var myCardType = Seme.Cuori
-// ma anche
-var myCardType2 : Seme = .Cuori
+class Card2 {
+    var seme : Seme = .Quadri
+}
+let myCard2 = Card2()
+myCard2.seme = .Cuori
 
 /*
     - switch (check esaustivo del compiler)
 */
 
-switch(myCardType) {
+switch(myCard2.seme) {
     case .Cuori:
         println("Cuori")
     case .Quadri:
