@@ -26,7 +26,7 @@ extension String {
         
         let arr = Array(self)
         let newArr = arr.map {(c: Character) -> String in
-            return "_" + c
+            return "_" + String(c)
         }
         
         return newArr
